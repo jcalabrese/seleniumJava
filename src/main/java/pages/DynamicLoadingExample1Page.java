@@ -15,6 +15,7 @@ public class DynamicLoadingExample1Page {
     private By startBtn = By.cssSelector("#start button");
     private By loadingIndicator = By.id("loading");
     private By loadedText = By.id("finish");
+    private By pageTitle = By.tagName("h3");
     public DynamicLoadingExample1Page (WebDriver driver){
         this.driver = driver;
     }
@@ -32,6 +33,10 @@ public class DynamicLoadingExample1Page {
 
     public String getLoadedText(){
         return driver.findElement(loadedText).getText();
+    }
+
+    public String getPageTitle (){
+        return driver.findElement(pageTitle).getText();
     }
 
 

@@ -6,6 +6,7 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import pages.HomePage;
+import utils.WindowManager;
 
 import java.time.Duration;
 
@@ -34,6 +35,10 @@ public class BaseTest {
     @AfterClass
     public void TearDdown(){
         driver.quit();
+    }
+
+    public WindowManager getWindowManager(){
+        return new WindowManager(driver);
     }
 //testng knows what we need to run ??
 
